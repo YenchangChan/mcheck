@@ -1,4 +1,9 @@
 Memory Not Free:
 -----------------------------
 	Address		Size		Caller
-	0x1f38090	20	at	main.c:6
+	0x1fde0b0	20	at	mcheck_sample.c:6[malloc]
+	0x1fde140	20	at	func.c:7[malloc]
+	0x1fde1a0	64	at	func.c:11[calloc]
+	0x1fde230	128	at	func.c:13[realloc]
+	0x1fde300	64	at	mcheck_sample.c:12[calloc]
+	0x1fde390	128	at	mcheck_sample.c:14[realloc]

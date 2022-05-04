@@ -92,7 +92,7 @@ CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
-am_mcheck_sample_OBJECTS = mcheck_sample.$(OBJEXT)
+am_mcheck_sample_OBJECTS = mcheck_sample.$(OBJEXT) func.$(OBJEXT)
 mcheck_sample_OBJECTS = $(am_mcheck_sample_OBJECTS)
 mcheck_sample_DEPENDENCIES = $(top_builddir)/libmcheck.la
 AM_V_lt = $(am__v_lt_$(V))
@@ -277,7 +277,7 @@ target_alias =
 top_build_prefix = ../
 top_builddir = ..
 top_srcdir = ..
-mcheck_sample_SOURCES = mcheck_sample.c
+mcheck_sample_SOURCES = mcheck_sample.c func.c
 mcheck_sample_LDADD = $(top_builddir)/libmcheck.la
 mcheck_sample_LDFLAGS = -all-static
 all: all-am
@@ -374,6 +374,7 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
+include ./$(DEPDIR)/func.Po
 include ./$(DEPDIR)/mcheck_sample.Po
 
 .c.o:

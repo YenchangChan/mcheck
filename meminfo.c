@@ -137,7 +137,12 @@ void mcheck_list_report_leak(mcheck_mem_list *mlist){
     {
         mcheck_meminfo mem_info = mlist->mem_info;
         char message[1024] = {0};
-        sprintf(message, "\t%p\t%lu\tat\t%s:%d", mem_info.address, mem_info.size, mem_info.caller.file, mem_info.caller.line);
+        sprintf(message, "\t%p\t%lu\tat\t%s:%d[%s]", 
+            mem_info.address, 
+            mem_info.size, 
+            mem_info.caller.file, 
+            mem_info.caller.line, 
+            mem_info.caller.func);
         write_report_file(message);
         mlist = mlist->next;
     }

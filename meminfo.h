@@ -15,7 +15,8 @@ typedef struct mcheck_caller_t
 {
     const char *file;
     int line;
-}mcheck_caller_t;
+    const char *func;
+} mcheck_caller_t;
 
 typedef struct mcheck_meminfo {
     void    *address;
