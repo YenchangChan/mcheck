@@ -1,0 +1,13 @@
+*.o 
+*.lo
+*.la
+autom4te.cache/
+.deps
+.libs
+aclocal.m4
+config.*
+depcomp
+missing
+stamp-h1
+example/*.o
+.vscode
